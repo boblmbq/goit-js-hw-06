@@ -7,18 +7,29 @@ const ingredients = [
   "Condiments",
 ];
 
-const allLi = [];
+//! this code i wrote before repeating the 6th block
 
-ingredients.forEach((el) => {
-  const createLi = document.createElement("li");
-  createLi.textContent = el;
-  createLi.classList.add(".item")
-  allLi.push(createLi)
-});
+// const allLi = [];
 
-console.log(allLi)
+// ingredients.forEach((el) => {
+//   const createLi = document.createElement("li");
+//   createLi.textContent = el;
+//   createLi.classList.add(".item")
+//   allLi.push(createLi)
+// });
 
-const ul = document.querySelector("#ingredients")
-ul.append(...allLi)
+// console.log(allLi)
 
-console.log(ul)
+// const ul = document.querySelector("#ingredients")
+// ul.append(...allLi)
+
+// console.log(ul)
+
+// ? and this after
+
+const newArr = ingredients
+  .map((el) => {
+    return `<li class = "item" >${el}</li>`;
+  }).join(" ");
+
+document.querySelector("#ingredients").innerHTML = newArr;
