@@ -1,5 +1,3 @@
-document.body.style.backgroundColor = "black";
-
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
@@ -42,8 +40,7 @@ function createBoxes(amount) {
 }
 
 const onCreateClick = () => {
-  const lol = Number(input.value);
-  createBoxes(lol);
+  createBoxes(Number(input.value));
 };
 
 btnCreate.addEventListener("click", onCreateClick);

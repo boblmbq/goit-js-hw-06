@@ -14,15 +14,17 @@ const images = [
 ];
 
 const ul = document.querySelector(".gallery");
-
-const newArr = images.map((atributes) => {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
-  img.setAttribute("src", atributes.url);
-  img.setAttribute("alt", atributes.alt);
-  img.setAttribute("width", 200)
-  li.insertAdjacentElement("beforeend", img);
-  return li;
-});
 ul.classList.add("newListForUl");
-ul.append(...newArr);
+
+const concArr = images
+  .map(
+    (atributes) => `<li>
+        <img src="${atributes.url}" alt="${atributes.alt}" width="200" />
+      </li>`
+  )
+  .join("");
+
+const arr = [concArr]
+
+console.log(concArr);
+ul.insertAdjacentHTML("beforeend", ...arr);
